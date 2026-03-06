@@ -14,38 +14,6 @@ const C = {
   muted: "#64748b",
 };
 
-/* ─── Helpers ────────────────────────────────────────────────── */
-function Pill({
-  children,
-  bg,
-  color = C.white,
-  size = "sm",
-}: {
-  children: React.ReactNode;
-  bg: string;
-  color?: string;
-  size?: "sm" | "lg";
-}) {
-  return (
-    <span
-      style={{
-        background: bg,
-        color,
-        borderRadius: 999,
-        padding: size === "lg" ? "6px 18px" : "3px 12px",
-        fontWeight: 800,
-        fontSize: size === "lg" ? "0.85rem" : "0.68rem",
-        letterSpacing: "0.07em",
-        textTransform: "uppercase",
-        display: "inline-block",
-        lineHeight: 1.4,
-      }}
-    >
-      {children}
-    </span>
-  );
-}
-
 /* ─── Deal Card ──────────────────────────────────────────────── */
 function DealCard({
   index,
@@ -106,26 +74,24 @@ function DealCard({
           position: "relative",
         }}
       >
-        <Pill bg="rgba(255,255,255,0.25)" color={C.white} size="sm">
-          {badge}
-        </Pill>
+        {/* Highlighted Deal badge */}
         <div
           style={{
-            width: 36,
-            height: 36,
-            borderRadius: "50%",
-            background: "rgba(255,255,255,0.2)",
-            border: "2px solid rgba(255,255,255,0.6)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            background: C.white,
+            color: accentColor,
+            borderRadius: 10,
+            padding: "5px 14px",
             fontWeight: 900,
             fontSize: "1rem",
-            color: C.white,
+            letterSpacing: "0.06em",
+            textTransform: "uppercase",
+            boxShadow: "0 2px 10px rgba(0,0,0,0.18)",
+            border: `2px solid ${accentColor}`,
+            lineHeight: 1.3,
             flexShrink: 0,
           }}
         >
-          {index}
+          {badge}
         </div>
         <div>
           <div
@@ -643,8 +609,8 @@ export default function App() {
             index={3}
             accentColor={C.lime}
             badge="Deal 3"
-            title="School Shoes — Boys & Girls"
-            subtitle="For 6th to 10th Class students"
+            title="School Shoes — For Boys & Girls"
+            subtitle="Both Boys & Girls | 6th to 10th Class"
             images={[
               {
                 src: "/assets/uploads/IMG-20260221-WA0018-3-1.jpg",
@@ -661,9 +627,9 @@ export default function App() {
             ]}
             price="₹479+"
             details={[
-              "Boys Shoes — ₹479/- | ₹489/- | ₹499/-",
-              "Girls Shoes — ₹479/- | ₹489/- | ₹499/-",
-              "Suitable for 6th to 10th Class",
+              "👦 Boys Shoes — ₹479/- | ₹489/- | ₹499/-",
+              "👧 Girls Shoes — ₹479/- | ₹489/- | ₹499/-",
+              "For Boys & Girls | 6th to 10th Class",
             ]}
             delay={0.34}
           />
