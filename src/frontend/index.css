@@ -10,63 +10,121 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('/assets/fonts/BricolageGrotesque[opsz,wght].woff2') format('woff2');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
-    --radius: 0.75rem;
-    --background: 0.08 0.025 255;
-    --foreground: 0.98 0 0;
-    --card: 0.12 0.02 255;
-    --card-foreground: 0.98 0 0;
-    --popover: 0.12 0.02 255;
-    --popover-foreground: 0.98 0 0;
-    --primary: 0.78 0.18 75;
-    --primary-foreground: 0.08 0.025 255;
-    --secondary: 0.65 0.19 200;
-    --secondary-foreground: 0.98 0 0;
-    --destructive: 0.577 0.245 27.325;
-    --destructive-foreground: 0.985 0 0;
-    --muted: 0.18 0.015 255;
-    --muted-foreground: 0.55 0 0;
-    --accent: 0.78 0.18 75;
-    --accent-foreground: 0.08 0.025 255;
-    --border: 0.25 0.02 255;
-    --input: 0.25 0.02 255;
-    --ring: 0.78 0.18 75;
-    --chart-1: 0.646 0.222 41.116;
-    --chart-2: 0.6 0.118 184.704;
-    --chart-3: 0.398 0.07 227.392;
-    --chart-4: 0.828 0.189 84.429;
-    --chart-5: 0.769 0.188 70.08;
-    --sidebar: 0.10 0.025 255;
-    --sidebar-foreground: 0.98 0 0;
-    --sidebar-primary: 0.78 0.18 75;
-    --sidebar-primary-foreground: 0.08 0.025 255;
-    --sidebar-accent: 0.16 0.02 255;
-    --sidebar-accent-foreground: 0.85 0 0;
-    --sidebar-border: 0.25 0.02 255;
-    --sidebar-ring: 0.78 0.18 75;
+    --radius: 0.625rem;
+
+    /* FleekBuy Brand: White/light background, blue primary, green accent, yellow highlight */
+    --background: 0.98 0.004 240;
+    --foreground: 0.18 0.04 255;
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.04 255;
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.04 255;
+
+    /* Primary: FleekBuy Blue */
+    --primary: 0.42 0.18 255;
+    --primary-foreground: 0.99 0 0;
+
+    /* Secondary: FleekBuy Green */
+    --secondary: 0.52 0.17 145;
+    --secondary-foreground: 0.99 0 0;
+
+    /* Accent: FleekBuy Yellow/Gold */
+    --accent: 0.82 0.18 85;
+    --accent-foreground: 0.15 0.04 255;
+
+    --destructive: 0.57 0.24 27;
+    --destructive-foreground: 0.99 0 0;
+
+    --muted: 0.95 0.008 240;
+    --muted-foreground: 0.52 0.02 240;
+
+    --border: 0.90 0.015 240;
+    --input: 0.90 0.015 240;
+    --ring: 0.42 0.18 255;
+
+    --chart-1: 0.42 0.18 255;
+    --chart-2: 0.52 0.17 145;
+    --chart-3: 0.82 0.18 85;
+    --chart-4: 0.57 0.24 27;
+    --chart-5: 0.70 0.15 200;
+
+    --sidebar: 0.15 0.04 255;
+    --sidebar-foreground: 0.95 0.01 240;
+    --sidebar-primary: 0.82 0.18 85;
+    --sidebar-primary-foreground: 0.15 0.04 255;
+    --sidebar-accent: 0.22 0.06 255;
+    --sidebar-accent-foreground: 0.95 0.01 240;
+    --sidebar-border: 0.25 0.05 255;
+    --sidebar-ring: 0.82 0.18 85;
   }
 
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
     font-family: 'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif;
   }
+
+  h1, h2, h3 {
+    font-family: 'Bricolage Grotesque', 'Plus Jakarta Sans', Arial, sans-serif;
+  }
 }
 
-/* Logo halo glow animation */
+/* ─── Logo halo glow animation ─── */
 @keyframes haloGlow {
-  0%   { box-shadow: 0 0 20px 6px rgba(244,166,33,0.55), 0 0 60px 10px rgba(244,166,33,0.2); }
-  50%  { box-shadow: 0 0 36px 14px rgba(244,166,33,0.75), 0 0 80px 20px rgba(249,115,22,0.3); }
-  100% { box-shadow: 0 0 20px 6px rgba(244,166,33,0.55), 0 0 60px 10px rgba(244,166,33,0.2); }
+  0%   { box-shadow: 0 0 20px 6px rgba(21,101,192,0.5), 0 0 60px 10px rgba(46,180,64,0.2); }
+  33%  { box-shadow: 0 0 30px 10px rgba(46,180,64,0.55), 0 0 70px 16px rgba(255,204,0,0.2); }
+  66%  { box-shadow: 0 0 36px 14px rgba(255,204,0,0.65), 0 0 80px 20px rgba(21,101,192,0.2); }
+  100% { box-shadow: 0 0 20px 6px rgba(21,101,192,0.5), 0 0 60px 10px rgba(46,180,64,0.2); }
 }
 
 .logo-halo {
-  border-radius: 20px;
-  padding: 4px;
-  background: linear-gradient(135deg, #f4a621, #f97316, #f4a621);
-  animation: haloGlow 2.8s ease-in-out infinite;
+  border-radius: 16px;
+  padding: 3px;
+  background: linear-gradient(135deg, #1565C0, #2EB840, #FFCC00, #1565C0);
+  background-size: 200% 200%;
+  animation: haloGlow 3s ease-in-out infinite;
   display: inline-block;
+}
+
+/* ─── Print styles ─── */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .invoice-print-area {
+    box-shadow: none !important;
+  }
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(0.75 0.04 240);
+  border-radius: 3px;
 }

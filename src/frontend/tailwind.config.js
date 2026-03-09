@@ -72,8 +72,14 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      fontFamily: {
+        display: ['"Bricolage Grotesque"', '"Plus Jakarta Sans"', 'Arial', 'sans-serif'],
+        body: ['"Plus Jakarta Sans"', '"Segoe UI"', 'Arial', 'sans-serif'],
+      },
       boxShadow: {
         xs: "0 1px 2px 0 rgba(0,0,0,0.05)",
+        card: "0 2px 12px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04)",
+        "card-hover": "0 8px 30px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06)",
       },
       keyframes: {
         "accordion-down": {
